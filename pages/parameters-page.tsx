@@ -24,5 +24,10 @@ export default function ParametersPage() {
     }
   ]);
 
-  return <ParameterList parameterList={parameterList}></ParameterList>;
+  return (
+    <>
+      <h1>Parameter Page</h1>
+      <ParameterList parameterList={parameterList}></ParameterList>
+    </>
+  );
 }
