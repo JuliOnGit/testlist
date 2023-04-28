@@ -7,16 +7,19 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const parameterList = [
     {
+      id: 1,
       name: 'first param',
       defaultValue: 'a default value',
       actualValue: 'another value'
     },
     {
+      id: 2,
       name: 'next parameter',
       defaultValue: 'a value',
       actualValue: 'the same value'
     },
     {
+      id: 3,
       name: 'third parameter',
       defaultValue: 'another value',
       actualValue: 'a different value'
