@@ -1,34 +1,36 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import ParameterList from '@/components/parameter-list';
+import ParameterView from '@/components/parameter-view';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const parameterList = [
-    {
-      id: 1,
-      name: 'first param',
-      defaultValue: 'a default value',
-      actualValue: 'another value'
-    },
-    {
-      id: 2,
-      name: 'next parameter',
-      defaultValue: 'a value',
-      actualValue: 'the same value'
-    },
-    {
-      id: 3,
-      name: 'third parameter',
-      defaultValue: 'another value',
-      actualValue: 'a different value'
-    }
-  ];
+  // const parameterList = [
+  //   {
+  //     id: 1,
+  //     name: 'first param',
+  //     defaultValue: 'a default value',
+  //     actualValue: 'another value'
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'next parameter',
+  //     defaultValue: 'a value',
+  //     actualValue: 'the same value'
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'third parameter',
+  //     defaultValue: 'another value',
+  //     actualValue: 'a different value'
+  //   }
+  // ];
   return (
     <main>
       <h1>Hello world!</h1>
-      <ParameterList parameterList={parameterList}></ParameterList>
+      {/* <ParameterList parameterList={parameterList}></ParameterList> */}
+      <ParameterView></ParameterView>
     </main>
   );
 }
