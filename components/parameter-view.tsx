@@ -1,6 +1,6 @@
-import { useState } from "react";
-import ParameterList from "./parameter-list";
-import { Parameter } from "@/interfaces/parameter";
+import { useState } from 'react';
+import ParameterList from './parameter-list';
+import { Parameter } from '@/interfaces/parameter';
 
 export default function ParameterView() {
   const [parameterList, setParameterList] = useState<Parameter[]>([

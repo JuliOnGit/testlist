@@ -1,4 +1,4 @@
-import { Parameter } from "@/interfaces/parameter";
+import { Parameter } from '@/interfaces/parameter';
 
 export default function ParameterList({ parameterList }: { parameterList: Parameter[] }) {
   return (
