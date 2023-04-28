@@ -1,7 +1,7 @@
-import { TestCase } from "./testCase";
+import { TestCase } from './testCase';
 
 export type TestSuite = {
-    name: string;
-    description: string;
-    testCases: TestCase[];
+  name: string;
+  description: string;
+  testCases: TestCase[];
 }
