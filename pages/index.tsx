@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import ParameterList from '@/components/parameter-list';
 import ParameterView from '@/components/parameter-view';
 
 const inter = Inter({ subsets: ['latin'] })
