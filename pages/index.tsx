@@ -15,6 +15,11 @@ export default function Home() {
       name: 'next parameter',
       defaultValue: 'a value',
       actualValue: 'the same value'
+    },
+    {
+      name: 'third parameter',
+      defaultValue: 'another value',
+      actualValue: 'a different value'
     }
   ];
   return (
