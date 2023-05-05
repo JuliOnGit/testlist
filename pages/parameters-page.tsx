@@ -1,5 +1,6 @@
 import ParameterList from '@/components/parameter-list';
 import fetcher from '@/lib/fetcher';
+import Link from 'next/link';
 import useSwr from 'swr';
 
 export default function ParametersPage() {
@@ -9,6 +10,7 @@ export default function ParametersPage() {
     <>
       <h1>Parameter Page</h1>
       <ParameterList parameterList={!data ? []: data}></ParameterList>
+      <Link href={'/'}>Navigate back</Link>
     </>
   );
 }

@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main>
-      <h1>Here is the ParameterView</h1>
-      <Link href={'/parameters-page'}>Go to parameter view</Link>
+      <h1>Here is the Home-Page</h1>
+      <Link href={'/parameters-page'}>Go to parameter page</Link>
     </main>
   );
 }
