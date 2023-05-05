@@ -1,33 +1,15 @@
 import ParameterList from '@/components/parameter-list';
-import { Parameter } from '@/interfaces/parameter';
-import { useState } from 'react';
+import useSwr from 'swr';
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function ParametersPage() {
-  const [parameterList, setParameterList] = useState<Parameter[]>([
-    {
-      id: 1,
-      name: 'first param',
-      defaultValue: 'a default value',
-      actualValue: 'another value'
-    },
-    {
-      id: 2,
-      name: 'next parameter',
-      defaultValue: 'a value',
-      actualValue: 'the same value'
-    },
-    {
-      id: 3,
-      name: 'third parameter',
-      defaultValue: 'another value',
-      actualValue: 'a different value'
-    }
-  ]);
+  const { data } = useSwr('/api/parameter', fetcher);
 
   return (
     <>
       <h1>Parameter Page</h1>
-      <ParameterList parameterList={parameterList}></ParameterList>
+      <ParameterList parameterList={!data ? []: data}></ParameterList>
     </>
   );
 }
