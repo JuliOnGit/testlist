@@ -1,7 +1,6 @@
 import ParameterList from '@/components/parameter-list';
+import fetcher from '@/lib/fetcher';
 import useSwr from 'swr';
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function ParametersPage() {
   const { data } = useSwr('/api/parameter', fetcher);
