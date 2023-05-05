@@ -3,14 +3,14 @@ import fetcher from '@/lib/fetcher';
 import Link from 'next/link';
 import useSwr from 'swr';
 
-export default function ParametersPage() {
-  const { data } = useSwr('/api/parameter', fetcher);
+export default function TestCasePage() {
+  const { data } = useSwr('/api/parameters', fetcher);
 
   return (
     <>
-      <h1>Parameter Page</h1>
+      <h1>TestCase Page</h1>
       <ParameterList parameterList={data || []}></ParameterList>
-      <Link href={'/'}>Navigate back</Link>
+      <Link href={'/'}>Navigate to start</Link>
     </>
   );
 }

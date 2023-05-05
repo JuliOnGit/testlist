@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main>
       <h1>Here is the Home-Page</h1>
-      <Link href={'/parameters-page'}>Go to parameter page</Link>
+      <Link href={'/testcase-page'}>Go to testcase page</Link>
     </main>
   );
 }
