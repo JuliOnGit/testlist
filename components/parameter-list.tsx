@@ -19,9 +19,6 @@ export default function ParameterList({ parameterList }: { parameterList: Parame
             <td>{p.defaultValue}</td>
             <td>{p.actualValue}</td>
           </tr>)}
-        <tr>
-          <td></td>
-        </tr>
       </tbody>
     </table>
   );
