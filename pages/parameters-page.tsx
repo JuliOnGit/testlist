@@ -9,7 +9,7 @@ export default function ParametersPage() {
   return (
     <>
       <h1>Parameter Page</h1>
-      <ParameterList parameterList={!data ? []: data}></ParameterList>
+      <ParameterList parameterList={data || []}></ParameterList>
       <Link href={'/'}>Navigate back</Link>
     </>
   );
