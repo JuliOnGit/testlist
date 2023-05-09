@@ -1,4 +1,5 @@
 import { Parameter } from '@/interfaces/parameter';
+import ParameterRow from './parameter-row';
 
 export default function ParameterList({ parameterList }: { parameterList: Parameter[] }) {
   return (
@@ -13,12 +14,8 @@ export default function ParameterList({ parameterList }: { parameterList: Parame
       </thead>
       <tbody>
         {parameterList.map((p) =>
-          <tr key={p.id}>
-            <td>{p.id}</td>
-            <td>{p.name}</td>
-            <td>{p.defaultValue}</td>
-            <td>{p.actualValue}</td>
-          </tr>)}
+          <ParameterRow parameter={p} key={p.id}/>
+        )}
       </tbody>
     </table>
   );
