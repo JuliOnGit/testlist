@@ -1,24 +1,38 @@
 import { CheckIcon, PencilIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
+interface FormElements extends HTMLFormControlsCollection {
+  actualValue: HTMLInputElement
+}
+
+interface ActualValueFormElement extends HTMLFormElement {
+  readonly elements: FormElements
+}
+
 export default function ParameterValue({ currentValue }: { currentValue: string | number | boolean }) {
-
   const [isEditing, setIsEditing] = useState(false);
+  const [value, setValue] = useState(currentValue);
 
-  const edit = () => setIsEditing(true);
-  const close = () => setIsEditing(false);
+  function handleSubmit(e: React.FormEvent<ActualValueFormElement>): void {
+    e.preventDefault();
 
-  return isEditing ? (
-    <>
-      <input type='text' value={currentValue as string} />
-      <button onClick={close}>
+    console.log(e.currentTarget.elements.actualValue.value);
+
+    setValue(e.currentTarget.elements.actualValue.value);
+    setIsEditing(false);
+  }
+
+  return isEditing
+    ? (<form onSubmit={handleSubmit}>
+      <input name='actualValue' type='text' defaultValue={value as string} />
+      <button type='submit'>
         <CheckIcon className='h-4 w-4' />
       </button>
-    </>
-  ) : (<>
-    {currentValue}
-    <button onClick={edit}>
-      <PencilIcon className='h-4 w-4' />
-    </button>
-  </>);
+    </form>)
+    : (<>
+      {value}
+      <button onClick={() => setIsEditing(true)}>
+        <PencilIcon className='h-4 w-4' />
+      </button>
+    </>);
 }
