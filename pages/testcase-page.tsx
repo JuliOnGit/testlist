@@ -9,7 +9,9 @@ export default function TestCasePage() {
   return (
     <>
       <h1>TestCase Page</h1>
-      <ParameterList parameterList={data || []}></ParameterList>
+      <div className='shadow-sm overflow-hidden w-4/5'>
+        <ParameterList parameterList={data || []}></ParameterList>
+      </div>
       <Link href={'/'}>Navigate to start</Link>
     </>
   );
