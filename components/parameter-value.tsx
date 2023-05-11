@@ -23,16 +23,16 @@ export default function ParameterValue({ currentValue }: { currentValue: string 
   }
 
   return isEditing
-    ? (<form onSubmit={handleSubmit}>
+    ? (<form onSubmit={handleSubmit} className='flex justify-between'>
       <input name='actualValue' type='text' defaultValue={value as string} />
       <button type='submit'>
         <CheckIcon className='h-4 w-4' />
       </button>
     </form>)
-    : (<>
+    : (<div className='flex justify-between'>
       {value}
       <button onClick={() => setIsEditing(true)}>
         <PencilIcon className='h-4 w-4' />
       </button>
-    </>);
+    </div>);
 }
