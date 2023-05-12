@@ -6,12 +6,11 @@ export default function handler(
   res: NextApiResponse<any>
 ) {
   const body = req.body;
-
+  console.log('received a request :-)');
   console.log('body: ', body);
-
-  if (!body.first || !body.last) {
-    return res.status(400).json({ data:  'First or last name not found' });
-  }
-
-  res.status(200).json({ data:  `${body.first} ${body.last}`});
+  console.log('parsed body: ', JSON.parse(body));
+  
+  const { updatedValue } = JSON.parse(body);
+  
+  res.status(200).json({ data: `updated new value '${updatedValue}'!` });
 }
