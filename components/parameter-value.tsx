@@ -12,39 +12,30 @@ interface ActualValueFormElement extends HTMLFormElement {
 }
 
 export default function ParameterValue({ currentValue }: { currentValue: string | number | boolean }) {
-  
+
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState(currentValue);
 
   // const { data } = useSwr('/api/parameter-value-form', fetcher);
-  
+
   const handleSubmit = (e: React.FormEvent<ActualValueFormElement>): void => {
     e.preventDefault();
 
     console.log('In handleSubmit: ', e.currentTarget.elements.actualValue.value);
-    
-    const res = fetch('/api/parameter-value-form', {
+
+    fetch('/api/parameter-value-form', {
       method: 'POST',
       body: JSON.stringify({
         updatedValue: e.currentTarget.elements.actualValue.value
       })
-    })
-      .then(res => {
-        // setValue(e.currentTarget.elements.actualValue.value);
-        console.log('res', res.json()
-          .then(result => {
-            setValue(result.data);
-            setIsEditing(false);
-            console.log('result in inner then: ', result);
-          }));
-        // setValue('something else ...');
-        console.log('in fetch response (outer then): ', res);
-      });
-    console.log('received a response (direct in submitHandler): ', res);
-    // const response = useSwr(isEditing ? '/api/parameter-value-form' : null, fetcher);
-
-    // setValue(e.currentTarget.elements.actualValue.value);
-    // setIsEditing(false);
+    }).then(res => {
+      res.json()
+        .then(result => {
+          setValue(result.data);
+          setIsEditing(false);
+          console.log('result in inner then: ', result);
+        });
+    });
   }
 
   return isEditing
