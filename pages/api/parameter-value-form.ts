@@ -7,6 +7,6 @@ export default function handler(
 ) {
   const body = JSON.parse(req.body);
   const { updatedValue } = body;
-  
-  res.status(200).json({ data: `updated new value '${updatedValue}'!` });
+
+  res.status(200).json({ data: updatedValue });
 }
