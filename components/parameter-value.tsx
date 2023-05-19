@@ -1,7 +1,5 @@
-import fetcher from '@/lib/fetcher';
 import { CheckIcon, PencilIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
-import useSwr from 'swr';
 
 interface FormElements extends HTMLFormControlsCollection {
   actualValue: HTMLInputElement
